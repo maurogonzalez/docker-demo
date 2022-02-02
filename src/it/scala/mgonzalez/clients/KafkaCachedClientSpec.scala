@@ -14,9 +14,9 @@ import java.util.UUID
 import scala.concurrent.duration.DurationInt
 
 class KafkaCachedClientSpec extends KafkaBaseSpec:
-  given RedisCodec[String, String] = RedisClient.stringCodec
   given logger: Logger[IO] = Slf4jLogger.create[IO].unsafeRunSync()
 
+  private val codec = RedisClient.stringCodec
   private val topic = s"OddiseyTopic${UUID.randomUUID()}"
   private val group = s"OddiseyConsumerGroup${UUID.randomUUID()}"
 
@@ -67,7 +67,7 @@ class KafkaCachedClientSpec extends KafkaBaseSpec:
     msgs.update(message.record.value :: _) *> message.offset.commit
 
   test("kafka-cached") {
-    RedisClient.redisStandalone("localhost").use(redis =>
+    RedisClient.redisStandalone("localhost", codec).use(redis =>
       for {
         msgs   <- Ref.of[IO, List[Odysseus]](List())
         signal <- SignallingRef[IO, Boolean](false)

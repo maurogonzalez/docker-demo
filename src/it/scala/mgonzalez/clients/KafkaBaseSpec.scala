@@ -1,7 +1,7 @@
 package mgonzalez.clients
 
 import cats.effect.IO
-import cats.syntax.applicative._
+import cats.syntax.applicative.*
 import fs2.kafka.{ Deserializer, Serializer }
 import mgonzalez.BaseSpec
 import oddisey.grpc.example.Odysseus

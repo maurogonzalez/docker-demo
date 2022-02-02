@@ -16,6 +16,8 @@ lazy val root = project
       Libraries.log4cats,
       Libraries.logback,
       Libraries.`fs2-kafka`,
+      Libraries.`http4s-dsl`,
+      Libraries.`http4s-server`,
       Libraries.postgres,
       Libraries.redis4cats,
       Libraries.`redis4cats-logs`,
@@ -23,9 +25,7 @@ lazy val root = project
     )
   )
   .configs(IntegrationTest)
-  .dependsOn(
-    grpc % "compile->compile;test->test"
-  )
+  .dependsOn(grpc)
 
 lazy val grpc = project
   .in(file("grpc"))

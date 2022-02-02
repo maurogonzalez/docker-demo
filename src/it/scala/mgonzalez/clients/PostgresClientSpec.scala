@@ -1,7 +1,7 @@
 package mgonzalez.clients
 
-import doobie.implicits._
-import doobie.postgres.implicits._
+import doobie.implicits.*
+import doobie.postgres.implicits.*
 import doobie.util.fragment.Fragment
 import doobie.util.update.Update
 import mgonzalez.BaseSpec

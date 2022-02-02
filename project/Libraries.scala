@@ -5,6 +5,8 @@ object Libraries {
   val `doobie-hikari`   = "org.tpolecat"     %% "doobie-hikari"       % Version.doobie
   val `doobie-postgres` = "org.tpolecat"     %% "doobie-postgres"     % Version.doobie
   val `fs2-kafka`       = "com.github.fd4s"  %% "fs2-kafka"           % Version.fs2Kafka
+  val `http4s-dsl` = "org.http4s" %% "http4s-dsl" % Version.http4s
+  val `http4s-server` = "org.http4s" %% "http4s-ember-server" % Version.http4s
   val log4cats          = "org.typelevel"    %% "log4cats-slf4j"      % Version.log4cats
   val logback           = "ch.qos.logback"   % "logback-classic"      % Version.logback
   val postgres          = "org.postgresql"   % "postgresql"           % Version.postgres

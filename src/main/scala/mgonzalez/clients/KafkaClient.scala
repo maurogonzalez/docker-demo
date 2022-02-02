@@ -1,8 +1,8 @@
 package mgonzalez.clients
 
 import java.util.UUID
-import cats.effect._
-import fs2.kafka._
+import cats.effect.*
+import fs2.kafka.*
 
 object KafkaClient:
 
